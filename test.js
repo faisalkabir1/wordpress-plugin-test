@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import { debug } from 'util';
 
 fixture`WordPress Site Tests`
     .page`http://localhost/wordpress/wp-login.php`;
@@ -14,7 +15,9 @@ test('Log in to WordPress site', async t => {
 
         if (await darkModeMenuItem.exists) {
             // If the dark mode menu item exists, click on it
-            await t.click(darkModeMenuItem);
+            await t.click(darkModeMenuItem)
+
+            await t.wait(3000);
         } else {
             // If the dark mode menu item doesn't exist, click on the "plugins" and then activate wp dark mode
             await t
