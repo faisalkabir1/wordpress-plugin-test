@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "node": "^18.20.2",
-    "prettier": "^3.2.5",
+"prettier": "^3.2.5",
     "testcafe": "^3.6.0-rc.1"
-  }
-}
+    },
+    
+      "scripts": {
+        "test": "testcafe chrome -c 1 test.js"
+      }
+    }
