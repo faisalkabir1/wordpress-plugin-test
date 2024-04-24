@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node": "^18.20.2",
+    "testcafe": "^3.6.0-rc.1"
+  }
+}
