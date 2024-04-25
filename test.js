@@ -1,13 +1,13 @@
 import { Selector } from 'testcafe';
-
+import Login from elements/login;
 fixture`WordPress Site Tests`
     .page`http://localhost/wordpress/wp-login.php`;
+const login = new Login;
+    const username = faisal
+    const pass = faisal
 
 test('Log in to WordPress site', async t => {
-    await t
-        .typeText('#user_login', 'faisal')
-        .typeText('#user_pass', 'faisal')
-        .click('#wp-submit')
+    await login.LoginMethod(username, pass);
         
         //Check WP Dark mode Plugin
         const darkModeMenuItem = Selector('#toplevel_page_wp-dark-mode');
