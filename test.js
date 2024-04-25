@@ -9,7 +9,12 @@ fixture`WordPress Site Tests`
     const password = 'faisal';
     const darkModePulgincheck = new DarkModePlugin();
     const darkModeHandler = new DarkModeHandler();
-test('Log in to WordPress site', async t => {
+   
+    test.before(async t => {
+        await t.setNativeDialogHandler(() => true);
+    });
+    
+    test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
 })
         //Check WP Dark mode Plugin
@@ -19,8 +24,9 @@ test('Check Dark Mode Plugin', async t => {
         await darkModePulgincheck.checkDarkModePlugin();
 
     });
-    test ('If Active, navigate to the WP Dark Mode & continue. Otherwise, Install the Plugin and Activate it', async t =>{
+test ('If Active, navigate to the WP Dark Mode & continue. Otherwise, Install the Plugin and Activate it', async t =>{
         await login.loginToWordPress(username, password);
-    
+        await t.wait(3000);
+       // await darkModePulgincheck.checkDarkModePlugin();
         await darkModeHandler.DarkModeHandlerMethod();
     })

@@ -8,7 +8,8 @@ async DarkModeHandlerMethod(){
     if (await this.darkModeMenuItem.exists) {
         await t.click(this.darkModeMenuItem);
         await t.wait(3000); 
-    } else {
+    } 
+    else {
         await t
             .click('#menu-plugins')
             .click('#activate-wp-dark-mode');

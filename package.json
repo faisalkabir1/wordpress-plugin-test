@@ -6,6 +6,6 @@
     },
     
       "scripts": {
-        "test": "testcafe chrome -c 1 test.js"
+        "test": "testcafe firefox -c 1 test.js"
       }
     }
