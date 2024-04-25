@@ -1,5 +1,4 @@
 import { Selector } from 'testcafe';
-import { debug } from 'util';
 
 fixture`WordPress Site Tests`
     .page`http://localhost/wordpress/wp-login.php`;
@@ -25,5 +24,5 @@ test('Log in to WordPress site', async t => {
                 .click('#activate-wp-dark-mode');
         }
     
-        // Proceed with the rest of the test if needed
+        // Proceed with the rest of the test
     });
