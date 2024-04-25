@@ -7,7 +7,7 @@ class DarkModeHandler {
 async DarkModeHandler(){
     if (await this.darkModeMenuItem.exists) {
         await t.click(this.darkModeMenuItem);
-        await t.wait(3000); // Adjust the wait time as needed
+        await t.wait(3000); 
     } else {
         await t
             .click('#menu-plugins')
