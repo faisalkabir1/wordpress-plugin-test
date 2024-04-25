@@ -10,9 +10,6 @@ fixture`WordPress Site Tests`
     const darkModePulgincheck = new DarkModePlugin();
     const darkModeHandler = new DarkModeHandler();
    
-    test.before(async t => {
-        await t.setNativeDialogHandler(() => true);
-    });
     
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
@@ -24,9 +21,19 @@ test('Check Dark Mode Plugin', async t => {
         await darkModePulgincheck.checkDarkModePlugin();
 
     });
-test ('If Active, navigate to the WP Dark Mode & continue. Otherwise, Install the Plugin and Activate it', async t =>{
+test.only('If Active, navigate to the WP Dark Mode & continue. Otherwise, Install the Plugin and Activate it', async t =>{
         await login.loginToWordPress(username, password);
         await t.wait(3000);
-       // await darkModePulgincheck.checkDarkModePlugin();
+     
         await darkModeHandler.DarkModeHandlerMethod();
+
+        //Enable Backend Darkmode
+        const darkModeLink = Selector('a').withText('Admin Panel Dark Mode')
+
+    await t.click(darkModeLink);
+    
+    const switchButton = Selector('div.relative.w-10.h-full.rounded-full.transition.duration-100.bg-slate-200');
+
+    // Click on the switch button to toggle its state
+    await t.click(switchButton);
     })
