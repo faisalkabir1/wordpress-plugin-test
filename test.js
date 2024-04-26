@@ -26,7 +26,8 @@ test.only('If Active, navigate to the WP Dark Mode & continue. Otherwise, Instal
         await t.wait(3000);
      
         await darkModeHandler.DarkModeHandlerMethod();
-
+        //await darkModePulgincheck.checkDarkModePlugin();
+        await t.wait(3000);
         //Enable Backend Darkmode
        // const darkModeLink = Selector('a').withText('Admin Panel Dark Mode')
 
