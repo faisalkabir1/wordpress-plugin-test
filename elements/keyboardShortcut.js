@@ -6,7 +6,7 @@ class KeyboardShortcut {
         this.Accessibility = Selector('a[data-v-571e2e25]')
         .withAttribute('href', '#/accessibility')
         .withText('Accessibility');
-        this.togglemode = Selector('span.w-5.h-5.flex.rounded-full.mt-0.5.ml-0.5.transition.duration-100.translate-x-4.border-none.bg-white');
+        this.togglemode = Selector('.w-5.h-5.flex.rounded-full.mt-0\\.5.ml-0\\.5.transition.duration-100.translate-x-4.border-none.bg-white');
          }
     async ChangeKeyboardShortcut() {
        await t.click(this.Advanced);
