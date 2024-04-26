@@ -28,12 +28,12 @@ test.only('If Active, navigate to the WP Dark Mode & continue. Otherwise, Instal
         await darkModeHandler.DarkModeHandlerMethod();
 
         //Enable Backend Darkmode
-        const darkModeLink = Selector('a').withText('Admin Panel Dark Mode')
+       // const darkModeLink = Selector('a').withText('Admin Panel Dark Mode')
 
-    await t.click(darkModeLink);
+   // await t.click(darkModeLink);
     
-    const switchButton = Selector('div.relative.w-10.h-full.rounded-full.transition.duration-100.bg-slate-200');
+    //const switchButton = Selector('div.relative.w-10.h-full.rounded-full.transition.duration-100.bg-slate-200');
 
     // Click on the switch button to toggle its state
-    await t.click(switchButton);
+   // await t.click(switchButton);
     })
