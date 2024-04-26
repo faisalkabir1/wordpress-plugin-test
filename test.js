@@ -56,7 +56,9 @@ test.only('Test Suite According to scenario', async t =>{
         await t.click(Customization);
         await switchanging.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
+        
         await customswitchset.SwitchChangeMethod();
+        await savechange.SaveChangesMethod();
     
 }
 )

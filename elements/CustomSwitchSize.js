@@ -7,10 +7,10 @@ class CustomSwitch {
        this.inputrange = Selector('input[placeholder="0"]');
          }
     async SwitchChangeMethod() {
-       await t.wait(3000);
+       await t.wait(1000);
         await t.click(this.customswitch);
         await t.typeText(this.inputrange,'200', { replace: true });
-       
+        await t.wait(1000);
     }
 }
 
