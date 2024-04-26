@@ -56,9 +56,11 @@ test.only('Test Suite According to scenario', async t =>{
         await t.click(Customization);
         await switchanging.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
-        
+        //From Settings -> Switch Settings - Select Custom Switch size & Scale it to 220.
         await customswitchset.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
-    
+        //From Settings -> Switch Settings - Change the Floating Switch Position (Left Bottom).
+        const divElement = Selector('span').withText('Left');
+    await t.click(divElement);
 }
 )
