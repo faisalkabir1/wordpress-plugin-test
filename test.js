@@ -45,8 +45,7 @@ test.only('Test Suite According to scenario', async t =>{
      
         await darkModeHandler.DarkModeHandlerMethod();
         //await darkModePulgincheck.checkDarkModePlugin();
-        await t.wait(1000);
-        await darkModePulgincheck.checkDarkModePlugin();
+        await t.wait(2000);
         //Enable Backend Darkmode
         await backendDarkMode.BEdarkModeMethod();
         await savechange.SaveChangesMethod();
@@ -58,7 +57,6 @@ test.only('Test Suite According to scenario', async t =>{
         darkmodevalidate.validateDarkMode();
         await darkModePulgincheck.checkDarkModePlugin();
        
-        await t.click(Customization);
         await switchanging.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
         //From Settings -> Switch Settings - Select Custom Switch size & Scale it to 220.
