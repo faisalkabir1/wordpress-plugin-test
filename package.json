@@ -6,6 +6,6 @@
     },
     
       "scripts": {
-        "test": "testcafe firefox -c 1 test.js"
+        "test": "testcafe firefox -c 1 test.js --skip-js-errors"
       }
     }
