@@ -15,6 +15,7 @@ fixture`WordPress Site Tests`
     const darkModeHandler = new DarkModeHandler();
    const backendDarkMode = new BEdarkMode();
     const savechange = new SaveChanges();
+    const darkmodevalidate = new DarkModeValidator()
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
     
@@ -39,11 +40,11 @@ test.only('Test Suite According to scenario', async t =>{
         await backendDarkMode.BEdarkModeMethod();
         await t.wait(2000);
         await savechange.SaveChangesMethod();
+        await t.click('#menu-dashboard');
         await t.click('#wp-admin-bar-wp-dark-mode-admin-bar-switch');
         await t.wait(2000);
+       // await t.eval(() => location.reload(true));
         //Validate whether the Darkmode is working or not on the Admin Dashboard.
-        const darkmodevalidate = new DarkModeValidator()
-        
         darkmodevalidate.validateDarkMode();
     
 }

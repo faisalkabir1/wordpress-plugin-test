@@ -3,21 +3,25 @@ import { Selector, t } from 'testcafe';
 class DarkModeValidator {
     constructor() {
        
-        this.dashboard = Selector('#menu-dashboard');
+        this.body = Selector('body');
+    
+
     }
 
     async validateDarkMode() {
 
-        await t.click(this.dashboard);
 
-        // Get the computed background color of the dark mode indicator
-        const bgColor = await this.dashboard.getStyleProperty('background-color');
-
-        // Validate if the background color indicates dark mode is active
-        if (bgColor === 'rgb(0, 0, 0)') {
-            console.log('Dark mode is active!');
+        // Get the computed background color of the body element
+        const bgColor = await this.body.getStyleProperty('background-color');
+    
+        // Log the background color for debugging
+        console.log('Background Color:', bgColor);
+    
+        // Validate if the background color is black
+        if (bgColor === 'rgb(36, 37, 37)') {
+            console.log('Yeah! Dark Mode Activated');
         } else {
-            console.log('Dark mode is not active.');
+            console.log('Background color is not dark.');
         }
     }
 }
