@@ -6,7 +6,7 @@ import BEdarkMode from './elements/BEdarkMode';
 import SaveChanges from './elements/SaveChangesButton';
 import DarkModeValidator from './elements/DarkModeValidate';
 
-fixture`WordPress Site Tests`
+fixture`WordPress Site Tests on WP Dark Mode Plugin`
     .page`http://localhost/wordpress/wp-login.php`;
 
     const login = new Login;
