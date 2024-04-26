@@ -7,19 +7,12 @@ class BEdarkMode {
     }
 
     async BEdarkModeMethod() {
-        // Check if the adminDarkMode exists
-        if (await this.adminDarkMode.exists) {
-            await t.click(this.adminDarkMode);
-            await t.wait(3000);
-        }
-
-        // Check if the switchButton exists
-        if (await this.switchButton.exists) {
-            // Click on the switch button to toggle its state
-            await t.click(this.switchButton);
-        }
+       
+        await t.click(this.adminDarkMode );
+        await t.wait(3000);
+    // Click on the switch button to toggle its state
+        await t.click(this.switchButton);
     }
 }
 
 export default BEdarkMode;
-
