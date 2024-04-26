@@ -30,7 +30,7 @@ test.only('If Active, navigate to the WP Dark Mode & continue. Otherwise, Instal
      
         await darkModeHandler.DarkModeHandlerMethod();
         //await darkModePulgincheck.checkDarkModePlugin();
-        await t.wait(3000);
+        await t.wait(2000);
        
         //Enable Backend Darkmode
         await backendDarkMode.BEdarkModeMethod();
