@@ -8,6 +8,7 @@ import DarkModeValidator from './elements/DarkModeValidate';
 import SwitchChange from './elements/SwitchChange';
 import CustomSwitch from './elements/CustomSwitchSize';
 import SwitchPositionLeft from './elements/SwitchPositionChange';
+import KeyboardShortcut from './elements/keyboardShortcut';
 
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
@@ -24,6 +25,7 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     const switchanging = new SwitchChange();
     const customswitchset = new CustomSwitch();
     const switchpositiontoleft = new SwitchPositionLeft();
+    const keyboardShortcutChange = new KeyboardShortcut();
 
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
@@ -31,13 +33,14 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     
 })
         //Check WP Dark mode Plugin
-test('Check Dark Mode Plugin', async t => {
+test.only('Check Dark Mode Plugin', async t => {
         await login.loginToWordPress(username, password);
         
         await darkModePulgincheck.checkDarkModePlugin();
+        await keyboardShortcutChange.ChangeKeyboardShortcut();
 
     });
-test.only('Test Suite According to scenario', async t =>{
+test('Test Suite According to scenario', async t =>{
         await login.loginToWordPress(username, password);
      
         await darkModeHandler.DarkModeHandlerMethod();
@@ -65,7 +68,7 @@ test.only('Test Suite According to scenario', async t =>{
         await switchpositiontoleft.SwitchPositiontoLeft()
         await savechange.SaveChangesMethod();
         //Disable Keyboard Shortcut from the Accessibility Settings.
-        
+
 
 }
 )
