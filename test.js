@@ -55,8 +55,6 @@ test.only('Test Suite According to scenario', async t =>{
         const Customization = Selector('h4').withText('Customization');
         await t.click(Customization);
         await switchanging.SwitchChangeMethod();
-
-
     
 }
 )

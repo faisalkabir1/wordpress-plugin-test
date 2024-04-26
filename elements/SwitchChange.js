@@ -6,7 +6,7 @@ class SwitchChange {
     }
     async SwitchChangeMethod() {
        
-        await t.click(SwitchSetting);
+        await t.click(this.SwitchSetting);
         await t.wait(2000);
         await t.click(Selector('div').hasClass('bg-[#F9FAFB]'));
     
