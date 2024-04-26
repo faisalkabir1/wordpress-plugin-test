@@ -5,6 +5,7 @@ import DarkModeHandler from './elements/DarkModeHandler';
 import BEdarkMode from './elements/BEdarkMode';
 import SaveChanges from './elements/SaveChangesButton';
 import DarkModeValidator from './elements/DarkModeValidate';
+import SwitchChange from './elements/SwitchChange';
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
     .page`http://localhost/wordpress/wp-login.php`;
@@ -16,7 +17,10 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     const darkModeHandler = new DarkModeHandler();
     const backendDarkMode = new BEdarkMode();
     const savechange = new SaveChanges();
-    const darkmodevalidate = new DarkModeValidator()
+    const darkmodevalidate = new DarkModeValidator();
+    const switchanging = new SwitchChange();
+
+
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
     
@@ -50,9 +54,8 @@ test.only('Test Suite According to scenario', async t =>{
         await darkModePulgincheck.checkDarkModePlugin();
         const Customization = Selector('h4').withText('Customization');
         await t.click(Customization);
+        await switchanging.SwitchChangeMethod();
 
-        const SwitchSetting = Selector('a[data-v-571e2e25]').withAttribute('href', '#/switch').withText('Switch Settings');
-        await t.click(SwitchSetting);
 
     
 }
