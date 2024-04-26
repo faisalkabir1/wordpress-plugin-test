@@ -3,8 +3,9 @@ import { Selector, t } from 'testcafe';
 
 class CustomSwitch {
     constructor() {
-       this.customswitch = Selector('div.cursor-pointer.flex.items-center.gap-2.py-2.transition.duration-75.px-3_5.text-base.font-normal.leading-6.rounded-lg.bg-gray-100.hover\\:bg-gray-200');
-        this.inputrange = Selector('#ek7fjj12e');
+       this.customswitch = ('div.cursor-pointer.flex.items-center.gap-2.py-2.transition.duration-75.px-3_5.text-base.font-normal.leading-6.rounded-lg.bg-blue-600.text-white.shadow-md').withText('Custom');
+       
+       this.inputrange = Selector('#ek7fjj12e');
          }
     async SwitchChangeMethod() {
        
