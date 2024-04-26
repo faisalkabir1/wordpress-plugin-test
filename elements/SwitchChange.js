@@ -10,7 +10,7 @@ class SwitchChange {
         await t.click(this.SwitchSetting);
        
         await t.click(this.switch);
-        await t.wait(2000);
+        await t.wait(1000);
     
     }
 }
