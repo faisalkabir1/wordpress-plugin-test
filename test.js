@@ -3,8 +3,7 @@ import Login from './elements/login';
 import DarkModePlugin from './elements/checkDarkModePlugin';
 import DarkModeHandler from './elements/DarkModeHandler'; 
 import BEdarkMode from './elements/BEdarkMode';
-import saveChanges from './elements/SaveChangesButton';
-import saveChanges from './elements/SaveChangesButton';
+import SaveChanges from './elements/SaveChangesButton';
 
 fixture`WordPress Site Tests`
     .page`http://localhost/wordpress/wp-login.php`;
@@ -14,7 +13,7 @@ fixture`WordPress Site Tests`
     const darkModePulgincheck = new DarkModePlugin();
     const darkModeHandler = new DarkModeHandler();
    const backendDarkMode = new BEdarkMode();
-    const SaveChanges = new saveChanges();
+    const savechange = new SaveChanges();
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
 })
