@@ -63,8 +63,9 @@ test.only('Test Suite According to scenario', async t =>{
         await savechange.SaveChangesMethod();
         //From Settings -> Switch Settings - Change the Floating Switch Position (Left Bottom).
         await switchpositiontoleft.SwitchPositiontoLeft()
-    
-    await savechange.SaveChangesMethod();
+        await savechange.SaveChangesMethod();
+        //Disable Keyboard Shortcut from the Accessibility Settings.
+        
 
 }
 )
