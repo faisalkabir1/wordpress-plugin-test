@@ -48,9 +48,11 @@ test.only('Test Suite According to scenario', async t =>{
         //Validate whether the Darkmode is working or not on the Admin Dashboard.
         darkmodevalidate.validateDarkMode();
         await darkModePulgincheck.checkDarkModePlugin();
-        const Customization = Selector('div[data-v-571e2e25]').withAttribute('tabindex', '1');
+        const Customization = Selector('h4').withText('Customization');
         await t.click(Customization);
+
         const SwitchSetting = Selector('a[data-v-571e2e25]').withAttribute('href', '#/switch').withText('Switch Settings');
+        await t.click(SwitchSetting);
 
     
 }
