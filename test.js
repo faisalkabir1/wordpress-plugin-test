@@ -7,6 +7,7 @@ import SaveChanges from './elements/SaveChangesButton';
 import DarkModeValidator from './elements/DarkModeValidate';
 import SwitchChange from './elements/SwitchChange';
 import CustomSwitch from './elements/CustomSwitchSize';
+import SwitchPositionLeft from './elements/SwitchPositionChange';
 
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
@@ -22,6 +23,7 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     const darkmodevalidate = new DarkModeValidator();
     const switchanging = new SwitchChange();
     const customswitchset = new CustomSwitch();
+    const switchpositiontoleft = new SwitchPositionLeft();
 
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
@@ -60,9 +62,8 @@ test.only('Test Suite According to scenario', async t =>{
         await customswitchset.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
         //From Settings -> Switch Settings - Change the Floating Switch Position (Left Bottom).
-        const leftBtn = Selector('span').withText('Left');
-    await t.click(leftBtn);
-    await t.wait(1000);
+        await switchpositiontoleft.SwitchPositiontoLeft()
+    
     await savechange.SaveChangesMethod();
 
 }
