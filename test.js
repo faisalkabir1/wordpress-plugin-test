@@ -46,7 +46,7 @@ test.only('Test Suite According to scenario', async t =>{
         await darkModeHandler.DarkModeHandlerMethod();
         //await darkModePulgincheck.checkDarkModePlugin();
         await t.wait(1000);
-       
+        await darkModePulgincheck.checkDarkModePlugin();
         //Enable Backend Darkmode
         await backendDarkMode.BEdarkModeMethod();
         await savechange.SaveChangesMethod();
