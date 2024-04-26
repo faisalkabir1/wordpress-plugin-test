@@ -8,12 +8,13 @@ import DarkModeValidator from './elements/DarkModeValidate';
 
 fixture`WordPress Site Tests`
     .page`http://localhost/wordpress/wp-login.php`;
+
     const login = new Login;
     const username = 'faisal';
     const password = 'faisal';
     const darkModePulgincheck = new DarkModePlugin();
     const darkModeHandler = new DarkModeHandler();
-   const backendDarkMode = new BEdarkMode();
+    const backendDarkMode = new BEdarkMode();
     const savechange = new SaveChanges();
     const darkmodevalidate = new DarkModeValidator()
     test('Log in to WordPress site', async t => {
@@ -46,6 +47,11 @@ test.only('Test Suite According to scenario', async t =>{
        // await t.eval(() => location.reload(true));
         //Validate whether the Darkmode is working or not on the Admin Dashboard.
         darkmodevalidate.validateDarkMode();
+        await darkModePulgincheck.checkDarkModePlugin();
+        const Customization = Selector('div[data-v-571e2e25]').withAttribute('tabindex', '1');
+        await t.click(Customization);
+        const SwitchSetting = Selector('a[data-v-571e2e25]').withAttribute('href', '#/switch').withText('Switch Settings');
+
     
 }
 )
