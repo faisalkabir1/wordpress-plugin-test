@@ -35,7 +35,6 @@ test('Check Dark Mode Plugin', async t => {
     });
 test.only('Test Suite According to scenario', async t =>{
         await login.loginToWordPress(username, password);
-        await t.wait(2000);
      
         await darkModeHandler.DarkModeHandlerMethod();
         //await darkModePulgincheck.checkDarkModePlugin();
@@ -43,7 +42,6 @@ test.only('Test Suite According to scenario', async t =>{
        
         //Enable Backend Darkmode
         await backendDarkMode.BEdarkModeMethod();
-        await t.wait(2000);
         await savechange.SaveChangesMethod();
         await t.click('#menu-dashboard');
         await t.click('#wp-admin-bar-wp-dark-mode-admin-bar-switch');
@@ -55,6 +53,7 @@ test.only('Test Suite According to scenario', async t =>{
         const Customization = Selector('h4').withText('Customization');
         await t.click(Customization);
         await switchanging.SwitchChangeMethod();
+        await savechange.SaveChangesMethod();
     
 }
 )
