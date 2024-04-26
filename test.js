@@ -60,7 +60,10 @@ test.only('Test Suite According to scenario', async t =>{
         await customswitchset.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
         //From Settings -> Switch Settings - Change the Floating Switch Position (Left Bottom).
-        const divElement = Selector('span').withText('Left');
-    await t.click(divElement);
+        const leftBtn = Selector('span').withText('Left');
+    await t.click(leftBtn);
+    await t.wait(1000);
+    await savechange.SaveChangesMethod();
+
 }
 )
