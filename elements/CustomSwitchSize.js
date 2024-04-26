@@ -10,7 +10,7 @@ class CustomSwitch {
        await t.wait(1000);
         await t.click(this.customswitch);
         await t.typeText(this.inputrange,'200', { replace: true });
-        await t.wait(1000);
+        await t.wait(2000);
     }
 }
 

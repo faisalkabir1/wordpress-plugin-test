@@ -14,14 +14,14 @@ class DarkModeHandler {
     async DarkModeHandlerMethod() {
         if (await this.darkModeMenuItem.exists) {
             await t.click(this.darkModeMenuItem);
-            await t.wait(3000); 
+            await t.wait(1000); 
         } else {
 
             await t.click('#menu-plugins');
             
             // Search for WP Dark Mode plugin
             await t.typeText(this.searchBox, 'wp dark mode');
-            await t.wait(3000);
+            await t.wait(2000);
             if (await this.noPluginsFoundMessage.exists) {
                 // If no plugins found, click on Add Plugin
                 await t.click(this.AddPluginBtn);

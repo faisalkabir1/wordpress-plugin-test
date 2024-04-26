@@ -9,7 +9,7 @@ class BEdarkMode {
     async BEdarkModeMethod() {
        
         await t.click(this.adminDarkMode );
-        await t.wait(3000);
+        await t.wait(1000);
     // Click on the switch button to toggle its state
         await t.click(this.switchButton);
     }
