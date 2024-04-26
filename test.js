@@ -4,6 +4,7 @@ import DarkModePlugin from './elements/checkDarkModePlugin';
 import DarkModeHandler from './elements/DarkModeHandler'; 
 import BEdarkMode from './elements/BEdarkMode';
 import SaveChanges from './elements/SaveChangesButton';
+import DarkModeValidator from './elements/DarkModeValidate';
 
 fixture`WordPress Site Tests`
     .page`http://localhost/wordpress/wp-login.php`;
@@ -14,7 +15,6 @@ fixture`WordPress Site Tests`
     const darkModeHandler = new DarkModeHandler();
    const backendDarkMode = new BEdarkMode();
     const savechange = new SaveChanges();
-   
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
     
@@ -40,18 +40,11 @@ test.only('Test Suite According to scenario', async t =>{
         await t.wait(2000);
         await savechange.SaveChangesMethod();
         await t.click('#wp-admin-bar-wp-dark-mode-admin-bar-switch');
-        
+        await t.wait(2000);
         //Validate whether the Darkmode is working or not on the Admin Dashboard.
-        await t.click('#menu-dashboard');
-        const isDarkModeActive = await Selector('body').hasClass('dark-mode'); 
-        if (!isDarkModeActive) {
-            // If Dark Mode is not active, log a message
-            console.log('Dark Mode is not active on the Admin Dashboard.');
-        } else {
+        const darkmodevalidate = new DarkModeValidator()
         
-          
-            const bodyBackgroundColor = await Selector('body').getStyleProperty('background-color');
-            await t.expect(bodyBackgroundColor).eql('rgb(0, 0, 0)'); 
-    }
+        darkmodevalidate.validateDarkMode();
+    
 }
 )
