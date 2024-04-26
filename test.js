@@ -35,5 +35,5 @@ test.only('If Active, navigate to the WP Dark Mode & continue. Otherwise, Instal
         //Enable Backend Darkmode
         await backendDarkMode.BEdarkModeMethod();
         await t.wait(2000);
-        await saveChanges.SaveChangesMethod();
+        await savechange.SaveChangesMethod();
     })
