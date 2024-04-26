@@ -57,7 +57,7 @@ test('Test Suite According to scenario', async t =>{
         //Validate whether the Darkmode is working or not on the Admin Dashboard.
         darkmodevalidate.validateDarkMode();
         await darkModePulgincheck.checkDarkModePlugin();
-        const Customization = Selector('h4').withText('Customization');
+       
         await t.click(Customization);
         await switchanging.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
