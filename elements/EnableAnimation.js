@@ -1,6 +1,5 @@
 import { Selector, t } from 'testcafe';
-
-class SelectAnimation {
+class SelectAnimation{
     constructor() {
         this.Customization = Selector('h4').withText('Customization');
         this.SiteAnimation = Selector('a[data-v-571e2e25]').withAttribute('href', '#/animation').withText('Site Animation');
@@ -9,9 +8,11 @@ class SelectAnimation {
     async ChangeAnimation() {
        await t.click(this.Customization);
        await t.click(this.SiteAnimation);
+       await t.wait(1000)
        await t.click(this.DarkmodeToggle);
 
     }
+    
 }
 
 export default SelectAnimation;
