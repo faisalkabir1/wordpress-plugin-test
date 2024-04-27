@@ -19,7 +19,7 @@ class DarkModeValidator {
     
         // Validate if the background color is black
         if (bgColor === 'rgb(36, 37, 37)') {
-            console.log('Yeah! Dark Mode Activated');
+            console.log('Yeah!Admin Dashboard Dark Mode Activated');
         } else {
             console.log('Background color is not dark.');
         }
