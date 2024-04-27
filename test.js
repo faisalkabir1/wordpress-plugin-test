@@ -12,13 +12,14 @@ import KeyboardShortcut from './elements/keyboardShortcut';
 import EnablePageAnimation from './elements/EnableAnimation';
 import SelectAnimation from './elements/SelectAnimation';
 import DarkModeValidatorFrontend from './elements/ValidateFrontDarkMode';
+require('dotenv').config();
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
     .page`http://localhost/wordpress/wp-login.php`;
 
 const login = new Login();
-const username = 'faisal';
-const password = 'faisal';
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 const darkModePluginCheck = new DarkModePlugin();
 const darkModeHandler = new DarkModeHandler();
 const backendDarkMode = new BEdarkMode();
