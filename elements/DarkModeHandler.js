@@ -6,7 +6,7 @@ class DarkModeHandler {
         this.searchBox = Selector('#plugin-search-input');
         this.searchBox2 = Selector('#search-plugins');
         this.activebtn = Selector('#activate-wp-dark-mode');
-        this.AddPluginBtn = Selector('a').withExactText('Add New Plugin');
+        this.AddPluginBtn = Selector('a.page-title-action').withText('Add New Plugin');
         this.noPluginsFoundMessage = Selector('td.colspanchange').withText('No plugins found for: wp dark mode');
         this.wpDarkModeInstallButton = Selector('a.install-now').withAttribute('data-slug', 'wp-dark-mode');
        this.activeBtnDwnld = Selector('a.button.button-primary.activate-now')
