@@ -9,6 +9,7 @@ import SwitchChange from './elements/SwitchChange';
 import CustomSwitch from './elements/CustomSwitchSize';
 import SwitchPositionLeft from './elements/SwitchPositionChange';
 import KeyboardShortcut from './elements/keyboardShortcut';
+import EnablePageAnimation from './elements/EnableAnimation';
 import SelectAnimation from './elements/SelectAnimation';
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
@@ -26,7 +27,8 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     const customswitchset = new CustomSwitch();
     const switchpositiontoleft = new SwitchPositionLeft();
     const keyboardShortcutChange = new KeyboardShortcut();
-    const changeanimation = new SelectAnimation();
+    const enablePageAnimation = new EnablePageAnimation();
+    const select = new SelectAnimation();
     test('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
     
@@ -37,8 +39,9 @@ test.only('Check Dark Mode Plugin', async t => {
         await login.loginToWordPress(username, password);
        
         await darkModePulgincheck.checkDarkModePlugin();
-        await changeanimation.ChangeAnimation();
+        await enablePageAnimation.ChangeAnimation();
         await savechange.SaveChangesMethod();
+        await select.SelectAnimationMethod();
 
         
 
