@@ -1,6 +1,6 @@
 import { Selector, t } from 'testcafe';
 
-class DarkModeValidator {
+class DarkModeValidatorFrontend {
     constructor() {
        this.frontend = Selector('#wp-admin-bar-site-name');
         this.body = Selector('body');
@@ -8,7 +8,7 @@ class DarkModeValidator {
 
     }
 
-    async validateDarkMode() {
+    async ValidateDarkModeFrontend() {
         await t.click(this.frontend);
         await t.wait(3000);
 
@@ -27,4 +27,4 @@ class DarkModeValidator {
     }
 }
 
-export default DarkModeValidator;
+export default DarkModeValidatorFrontend;
