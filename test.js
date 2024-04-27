@@ -13,13 +13,14 @@ import EnablePageAnimation from './elements/EnableAnimation';
 import SelectAnimation from './elements/SelectAnimation';
 import DarkModeValidatorFrontend from './elements/ValidateFrontDarkMode';
 require('dotenv').config();
+console.log(process.env);
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
     .page(process.env.BASE_URL);
 
 const login = new Login();
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
+const username = process.env.User;
+const password = process.env.Pass;
 const darkModePluginCheck = new DarkModePlugin();
 const darkModeHandler = new DarkModeHandler();
 const backendDarkMode = new BEdarkMode();
