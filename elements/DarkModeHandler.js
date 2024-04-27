@@ -9,6 +9,10 @@ class DarkModeHandler {
         this.AddPluginBtn = Selector('a').withExactText('Add New Plugin');
         this.noPluginsFoundMessage = Selector('td.colspanchange').withText('No plugins found for: wp dark mode');
         this.wpDarkModeInstallButton = Selector('a.install-now').withAttribute('data-slug', 'wp-dark-mode');
+       this.activeBtnDwnld = Selector('a.button.button-primary.activate-now')
+    .withAttribute('data-slug', 'wp-dark-mode')
+    .withAttribute('data-plugin', 'wp-dark-mode/plugin.php')
+    .withText('Activate');
     }
 
     async DarkModeHandlerMethod() {
@@ -29,6 +33,14 @@ class DarkModeHandler {
                 await t.typeText(this.searchBox2, 'wp dark mode');
                 //install the plugin
                 await t.click(this.wpDarkModeInstallButton);
+                
+                await t.wait(40000);
+                //await t.click(this.activeBtnDwnld);
+                //await t.eval(() => location.reload(true));
+                await t.setNativeDialogHandler(() => true);
+                await t.click('#menu-plugins');
+                await t.click(this.activebtn);
+                await t.click(this.darkModeMenuItem)
             }
             else{// Activate WP Dark Mode plugin
                 console.log('Plugin found. Skipping next test.');
