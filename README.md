@@ -1,7 +1,9 @@
 # wordpress-plugin-test
+This repository contains the test suite for the WP Dark Mode plugin using TestCafe.
 
 #WP Dark Mode Plugin Test Suite
-This repository contains the test suite for the WP Dark Mode plugin using TestCafe. WP Dark Mode is a WordPress plugin that enables a dark mode feature for the WordPress dashboard.
+
+WP Dark Mode is a WordPress plugin that enables a dark mode feature for the WordPress dashboard.
 
 
 #Test Suite Overview:
