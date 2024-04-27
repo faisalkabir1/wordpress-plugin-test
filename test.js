@@ -35,26 +35,28 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
   
 
 test('Test Suite According to scenario', async t =>{
+        //login to your Wordpress site
         await login.loginToWordPress(username, password);
-     
+        //Check whether the “WP Dark Mode” Plugin is Active or not.
+        //If Active, navigate to the WP Dark Mode & continue. Otherwise, Install the Plugin and Activate it.
         await darkModeHandler.DarkModeHandlerMethod();
         //await darkModePulgincheck.checkDarkModePlugin();
         await t.wait(2000);
-        //Enable Backend Darkmode
+        // Enable Backend Darkmode from Settings -> General Settings.
         await backendDarkMode.BEdarkModeMethod();
         await savechange.SaveChangesMethod();
         await t.click('#menu-dashboard');
         await t.click('#wp-admin-bar-wp-dark-mode-admin-bar-switch');
         await t.wait(2000);
-       // await t.eval(() => location.reload(true));
         //Validate whether the Darkmode is working or not on the Admin Dashboard.
         darkmodevalidate.validateDarkMode();
+       // Navigate to the WP Dark Mode.
         await darkModePulgincheck.checkDarkModePlugin();
-       
+       //From Settings -> Switch Settings - Change the “Floating Switch Style” from the default selections 
         await switchanging.SwitchChangeMethod();
         await savechange.SaveChangesMethod();
         //From Settings -> Switch Settings - Select Custom Switch size & Scale it to 220.
-        await customswitchset.SwitchChangeMethod();
+        await customswitchset.CustomSwitchChangeMethod();
         await savechange.SaveChangesMethod();
         //From Settings -> Switch Settings - Change the Floating Switch Position (Left Bottom).
         await switchpositiontoleft.SwitchPositiontoLeft()
@@ -70,7 +72,6 @@ test('Test Suite According to scenario', async t =>{
         await savechange.SaveChangesMethod();
         // Validate whether the Darkmode is working or not from the Frontend.
         await frontend.ValidateDarkModeFrontend();
-
 
 }
 )
