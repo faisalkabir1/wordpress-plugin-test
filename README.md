@@ -16,12 +16,13 @@ Customizable Test Cases: Easily extend and customize test cases to accommodate c
 #Getting Started:
 1. Clone the Repository: Clone this repository to your local machine.
 2. Install Dependencies: Run 'npm install' to install the required dependencies.
-3. Configure Test Environment: Update the (.env) file to specify the target URL of your wordpress site and login credentials ('User Name' & 'Password')
+3. Configure Test Environment: Update the (.env) file to specify the target URL of your wordpress site and login credentials
 4. Update the TestCafe configuration: (package.json) to specify the browser configurations and others.
-5. Run Tests: Execute the tests using the command npm test to start the test suite.
+5. Run Tests: Execute the tests using the command 'npm run test' start the test suite.
 
+* I have used wordpress site in my localhost by using XAMPP
 
-Scenarios:
+#Scenarios:
 
 1. Log in to your WordPress site.
 2. Check whether the “WP Dark Mode” Plugin is Active or not.
