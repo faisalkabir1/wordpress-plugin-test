@@ -32,23 +32,9 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     const select = new SelectAnimation();
     const frontend = new DarkModeValidatorFrontend();
 
-    test.only('Log in to WordPress site', async t => {
-    await login.loginToWordPress(username, password);
-    await frontend.ValidateDarkModeFrontend();
-    
-    
-})
-        //Check WP Dark mode Plugin
-test('Check Dark Mode Plugin', async t => {
-        await login.loginToWordPress(username, password);
-       
-        await darkModePulgincheck.checkDarkModePlugin();
-        
+  
 
-        
-
-    });
-test.only('Test Suite According to scenario', async t =>{
+test('Test Suite According to scenario', async t =>{
         await login.loginToWordPress(username, password);
      
         await darkModeHandler.DarkModeHandlerMethod();
@@ -83,6 +69,7 @@ test.only('Test Suite According to scenario', async t =>{
         await select.SelectAnimationMethod();
         await savechange.SaveChangesMethod();
         // Validate whether the Darkmode is working or not from the Frontend.
+        await frontend.ValidateDarkModeFrontend();
 
 
 }
