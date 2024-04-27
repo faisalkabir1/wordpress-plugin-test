@@ -35,7 +35,7 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     
 })
         //Check WP Dark mode Plugin
-test.only('Check Dark Mode Plugin', async t => {
+test('Check Dark Mode Plugin', async t => {
         await login.loginToWordPress(username, password);
        
         await darkModePulgincheck.checkDarkModePlugin();
@@ -44,7 +44,7 @@ test.only('Check Dark Mode Plugin', async t => {
         
 
     });
-test('Test Suite According to scenario', async t =>{
+test.only('Test Suite According to scenario', async t =>{
         await login.loginToWordPress(username, password);
      
         await darkModeHandler.DarkModeHandlerMethod();
