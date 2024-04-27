@@ -11,6 +11,7 @@ import SwitchPositionLeft from './elements/SwitchPositionChange';
 import KeyboardShortcut from './elements/keyboardShortcut';
 import EnablePageAnimation from './elements/EnableAnimation';
 import SelectAnimation from './elements/SelectAnimation';
+import DarkModeValidatorFrontend from './elements/ValidateFrontDarkMode';
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
     .page`http://localhost/wordpress/wp-login.php`;
@@ -29,8 +30,11 @@ fixture`WordPress Site Tests on WP Dark Mode Plugin`
     const keyboardShortcutChange = new KeyboardShortcut();
     const enablePageAnimation = new EnablePageAnimation();
     const select = new SelectAnimation();
-    test('Log in to WordPress site', async t => {
+    const frontend = new DarkModeValidatorFrontend();
+
+    test.only('Log in to WordPress site', async t => {
     await login.loginToWordPress(username, password);
+    await frontend.ValidateDarkModeFrontend();
     
     
 })
@@ -78,6 +82,8 @@ test.only('Test Suite According to scenario', async t =>{
         await savechange.SaveChangesMethod();
         await select.SelectAnimationMethod();
         await savechange.SaveChangesMethod();
+        // Validate whether the Darkmode is working or not from the Frontend.
+
 
 }
 )
