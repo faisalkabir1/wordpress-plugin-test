@@ -39,9 +39,7 @@ test.only('Check Dark Mode Plugin', async t => {
         await login.loginToWordPress(username, password);
        
         await darkModePulgincheck.checkDarkModePlugin();
-        await enablePageAnimation.ChangeAnimation();
-        await savechange.SaveChangesMethod();
-        await select.SelectAnimationMethod();
+        
 
         
 
@@ -76,7 +74,10 @@ test('Test Suite According to scenario', async t =>{
         await t.wait(1000)
         await savechange.SaveChangesMethod();
         //From Settings -> Animation - Enable “Darkmode Toggle Animation” & change the “Animation Effect” from the default selections 
-        await changeanimation.ChangeAnimation();
+        await enablePageAnimation.ChangeAnimation();
+        await savechange.SaveChangesMethod();
+        await select.SelectAnimationMethod();
+        await savechange.SaveChangesMethod();
 
 }
 )
