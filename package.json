@@ -1,11 +1,11 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.5",
     "node": "^18.20.2",
-"prettier": "^3.2.5",
+    "prettier": "^3.2.5",
     "testcafe": "^3.6.0-rc.1"
-    },
-    
-      "scripts": {
-        "test": "testcafe firefox -c 1 test.js --skip-js-errors"
-      }
-    }
+  },
+  "scripts": {
+    "test": "testcafe firefox -c 1 test.js --skip-js-errors"
+  }
+}
