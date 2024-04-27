@@ -15,7 +15,7 @@ import DarkModeValidatorFrontend from './elements/ValidateFrontDarkMode';
 require('dotenv').config();
 
 fixture`WordPress Site Tests on WP Dark Mode Plugin`
-    .page`http://localhost/wordpress/wp-login.php`;
+    .page(process.env.BASE_URL);
 
 const login = new Login();
 const username = process.env.USERNAME;

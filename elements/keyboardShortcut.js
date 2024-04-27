@@ -13,7 +13,6 @@ class KeyboardShortcut {
        await t.wait(1000);
        await t.click(this.Accessibility);
        await t.click(this.togglemode);
-       await t.wait(1000);
     }
 }
 
