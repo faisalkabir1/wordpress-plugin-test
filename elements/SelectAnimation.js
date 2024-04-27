@@ -14,4 +14,4 @@ class SelectAnimation {
     }
 }
 
-export default SwitchPositionLeft;
+export default SelectAnimation;
