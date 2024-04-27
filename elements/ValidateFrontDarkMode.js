@@ -18,8 +18,8 @@ class DarkModeValidatorFrontend {
         // Log the background color for debugging
         console.log('Background Color:', bgColor);
     
-        // Validate if the background color is black
-        if (bgColor === 'rgb(36, 37, 37)') {
+        // Validate if the background color is dark type
+        if (bgColor === 'rgb(39, 40, 40)') {
             console.log('Yeah! Frontend Dark Mode Activated');
         } else {
             console.log('Frontend Background color is not dark.');
